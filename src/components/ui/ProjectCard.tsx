@@ -10,9 +10,9 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group relative flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300 hover:-translate-y-1">
+    <div className="group relative flex flex-col h-full rounded-2xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-xl dark:hover:shadow-gray-900/50 transition-all duration-300 hover:-translate-y-1">
       {/* Image */}
-      <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950 dark:to-purple-950">
+      <div className="relative w-full h-48 shrink-0 overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950 dark:to-purple-950">
         <Image
           src={project.imageUrl}
           alt={project.title}
@@ -26,16 +26,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-5 gap-3">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200 line-clamp-1">
           {project.title}
         </h3>
 
-        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed flex-1 line-clamp-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed min-h-[3.75rem] line-clamp-3">
           {project.description}
         </p>
 
         {/* Tech badges */}
-        <div className="flex flex-wrap gap-1.5 mt-1">
+        <div className="flex flex-wrap gap-1.5 mt-1 min-h-[2.5rem] items-start">
           {project.technologies.map((tech) => (
             <span
               key={tech}
@@ -46,8 +46,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 mt-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+        {/* Actions — always pinned to the bottom */}
+        <div className="flex items-center gap-3 mt-auto pt-3 border-t border-gray-100 dark:border-gray-800">
           <a
             href={project.githubUrl}
             target="_blank"
