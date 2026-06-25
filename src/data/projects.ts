@@ -54,4 +54,14 @@ export const projects: Project[] = [
     technologies: ["Java", "Spring Boot", "H2 Database", "Swagger"],
     githubUrl: "https://github.com/ceciliopf/productapi",
   },
+  {
+    id: 6,
+    title: "DespesAI",
+    description:
+      "Aplicação web de controle financeiro pessoal com gestão de cartões de crédito, rastreamento de despesas por categoria, importação inteligente de extrato bancário via IA e dashboard com visão geral das finanças.",
+    imageUrl: "/images/project6.jpg",
+    technologies: ["Next.js", "TypeScript", "React", "IA", "SaaS"],
+    githubUrl: "https://github.com/ceciliopf",
+    liveUrl: "https://despesai.com.br",
+  },
 ];
