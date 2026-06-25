@@ -22,14 +22,23 @@ export default function ProjectsSection() {
           </div>
         </AnimatedSection>
 
-        {/* Projects grid */}
+        {/* Projects grid — 5 cards: 3 top row, 2 centered bottom row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <ProjectCard project={project} />
             </AnimatedSection>
           ))}
         </div>
+        {projects.length > 3 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 lg:max-w-[calc(66.666%+12px)] lg:mx-auto">
+            {projects.slice(3).map((project, index) => (
+              <AnimatedSection key={project.id} delay={(index + 3) * 0.1}>
+                <ProjectCard project={project} />
+              </AnimatedSection>
+            ))}
+          </div>
+        )}
 
         {/* GitHub CTA */}
         <AnimatedSection delay={0.3}>

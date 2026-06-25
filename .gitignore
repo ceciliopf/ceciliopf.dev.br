@@ -39,3 +39,29 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# =========================================
+# Arquivos e Logs de Inteligência Artificial
+# =========================================
+
+# Traycer
+.traycer/
+*.traycer
+Traycer*
+*.bat
+*.sh
+
+# Cursor IDE
+.cursor/
+.cursorrules
+.cursorignore
+
+# Claude / Anthropic
+.claude/
+claude.json
+
+# Windsurf / Outros assistentes
+.windsurf/
+.ai/
+prompt.txt
+ai-plans/
